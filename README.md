@@ -11,6 +11,10 @@ Os lances sugeridos pela Hengine são selecionados após uma análise que leva e
 2. Qual o rating do jogador fez o lance
 3. Média de partidas que fez o lance e obteve vitória
 
-## Arquitetura básica
+## Geração de Lances
+
+Abaixo segue a arquitetura básica do processo de geração de lances:
+
+### Arquitetura Básica
 ![Arquiterura de geração de lances](Hengine%20-%20Arquitetura.jpg)
 
