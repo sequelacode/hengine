@@ -1,20 +1,37 @@
 # Hengine
-Uma engine de Xadrez baseada em lances humanos.
+
+Engine de xadrez baseada em lances humanos.
 
 ## Introdução
 
-A Hengine é uma engine de Xadrez baseadas em lances humanos. Basicamente, em função de um banco de dados de partidas acumuladas ao longo da historia do Xadrez, foi desenvolvido um algoritimo capaz de, em função do estado atual do tabuleiro de um jogo de Xadrez, sugerir o lance mais jogado naquela posição.
+A **Hengine** é uma engine de xadrez fundamentada em lances historicamente jogados por humanos.  
+Seu funcionamento baseia-se na análise de um grande banco de dados de partidas de xadrez acumuladas ao longo da história do jogo.
 
-Os lances sugeridos pela Hengine são selecionados após uma análise que leva em conta:
+A partir do **estado atual do tabuleiro**, a Hengine utiliza um algoritmo próprio para **sugerir o lance mais recorrente e eficiente** naquela posição, considerando apenas partidas reais já disputadas.
 
-1. Se o lance sugerido é de uma partida onde se obteve vitória
-2. Qual o rating do jogador fez o lance
-3. Média de partidas que fez o lance e obteve vitória
+Diferentemente de engines tradicionais focadas exclusivamente em cálculo profundo e avaliação heurística, a Hengine prioriza padrões humanos de jogo, buscando reproduzir decisões tomadas por jogadores experientes em contextos semelhantes.
+
+## Critérios de Seleção de Lances
+
+Os lances sugeridos pela Hengine passam por uma análise estatística baseada nos seguintes critérios:
+
+1. **Resultado da partida**  
+   O lance deve ter sido realizado em partidas que resultaram em vitória.
+
+2. **Rating do jogador**  
+   É considerado o rating (ELO) do jogador que executou o lance, atribuindo maior peso a jogadores mais bem ranqueados.
+
+3. **Taxa de sucesso do lance**  
+   Avalia-se a média de partidas em que o lance foi utilizado e resultou em vitória.
+
+Esses fatores combinados permitem que a engine priorize lances não apenas populares, mas também **estatisticamente eficazes**.
 
 ## Geração de Lances
 
-Abaixo segue a arquitetura básica do processo de geração de lances:
+A geração de lances na Hengine segue um fluxo bem definido, desde a leitura do estado atual do tabuleiro até a recomendação final.
 
 ### Arquitetura Básica
-![Arquiterura de geração de lances](Hengine%20-%20Arquitetura.jpg)
 
+A imagem abaixo ilustra a arquitetura geral do processo de geração de lances:
+
+![Arquitetura de geração de lances](Hengine%20-%20Arquitetura.jpg)
